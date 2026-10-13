@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sujith with AI · AI experiments</title><meta name="description" content="Research prompts run on several AI models, compared side by side.">
+<meta property="og:title" content="Sujith with AI · AI experiments"><meta property="og:description" content="Research prompts run on several AI models, compared side by side.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090e21;--card:#121a35;--ink:#f2f6ff;--muted:#a9b6d3;--cyan:#4de5e8;--purple:#9d86ff;--yellow:#ffc93c;--green:#3ddc84;--red:#ff5a5f;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+a{color:var(--cyan)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.12em;font-size:13px;color:var(--muted);text-decoration:none}
+.brand b{width:30px;height:30px;border-radius:9px;background:var(--cyan);color:var(--bg);display:grid;place-items:center;letter-spacing:0}
+h1{font-size:30px;line-height:1.15;margin:22px 0 8px;letter-spacing:-.01em}
+h2{font-size:21px;margin:34px 0 10px}
+.kicker{color:var(--yellow);font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.lead{color:var(--muted);font-size:17px}
+.note{background:rgba(255,201,60,.08);border:1px solid rgba(255,201,60,.35);border-radius:14px;padding:12px 14px;font-size:14px;color:#ffe3a1}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:12px 0}
+.big{font-size:34px;font-weight:900;line-height:1.1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:700;font-size:13px}
+.tablewrap{overflow-x:auto}
+.bar{height:10px;border-radius:6px;background:linear-gradient(90deg,var(--purple),var(--cyan));min-width:4px}
+.neg .bar{background:linear-gradient(90deg,#ff8a8d,var(--red))}.pos .bar{background:linear-gradient(90deg,#8ff0b9,var(--green))}
+ul{padding-left:20px}li{margin:4px 0}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;margin:10px 0}
+summary{cursor:pointer;font-weight:700}
+pre{white-space:pre-wrap;word-wrap:break-word;background:#0b1230;border:1px solid var(--line);border-radius:12px;padding:14px;font:13px/1.55 ui-monospace,Consolas,monospace;max-height:520px;overflow:auto}
+button{background:var(--cyan);color:var(--bg);border:0;border-radius:999px;padding:10px 18px;font-weight:800;font-size:15px;cursor:pointer}
+.cta{text-align:center;margin-top:40px}
+.cta a{display:inline-block;background:var(--cyan);color:var(--bg);text-decoration:none;font-weight:800;border-radius:999px;padding:12px 22px}
+.foot{color:var(--muted);font-size:13px;margin-top:30px}
+</style></head><body><main>
+<a class="brand" href="./"><b>S</b>SUJITH WITH AI</a>
+
+<h1>AI experiments</h1>
+<p class="lead">One research prompt, several AI models, compared side by side. Each page has the results, how the
+experiment was run, and the exact prompt so you can run it yourself.</p>
+<div class="card"><a href="us-engineers/"><b>What if no Indian engineer moved to America?</b></a><br>
+<span style="color:var(--muted)">USA −$250B, India +$91B a year by 2050 (AI median)</span></div>
+<div class="card"><a href="india-gdp/"><b>How rich would India be without British rule?</b></a><br>
+<span style="color:var(--muted)">$7.3T median answer vs $4.15T actual</span></div>
+<div class="cta"><a href="https://www.instagram.com/sujithwithai/">Follow @sujithwithai on Instagram</a></div>
+<p class="foot">AI estimates of hypothetical scenarios, not facts or forecasts. Model answers are reproduced as the models
+gave them; I checked their arithmetic and excluded answers that failed. Sources are listed on each page.</p>
+</main><script>
+function copyPrompt(){const t=document.getElementById('prompt').innerText;
+ navigator.clipboard.writeText(t).then(()=>{const b=document.getElementById('copybtn');b.textContent='Copied ✓';setTimeout(()=>b.textContent='Copy the prompt',2000)});}
+</script></body></html>
