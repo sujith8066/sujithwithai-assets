@@ -1,6 +1,21 @@
 {
  "reels": [
   {
+   "name": "reel-12-idea-prompt",
+   "media_id": "17959123953254593",
+   "keyword": "IDEA",
+   "topic": "Same startup idea rated 7.5/10 by AI with a normal question but 2/10 with a tough VC-analyst prompt; 4 AIs tested. Viewers were asked to comment IDEA to get the prompt.",
+   "public_replies": [
+    "Sent! Check your DMs 📩",
+    "Just sent it, check your inbox 🚀",
+    "Done ✅ it's in your DMs",
+    "On its way to your DMs 📬",
+    "Sent! Tell me what score your idea gets 🙌",
+    "Check your messages, it's there 👀"
+   ],
+   "dm": "Hey! 👋 Here's the idea-check prompt from the reel, with my test results and how to use it:\n\nhttps://sujith8066.github.io/sujithwithai-assets/idea-prompt/\n\nTap \"Copy the prompt\", paste it into ChatGPT, Claude or Gemini, fill in your idea honestly and answer its 5 hard questions. Tell me what score you get 📊\n\nFollow @sujithwithai for more AI experiments 🙌"
+  },
+  {
    "name": "reel-06-india-gdp",
    "media_id": "17919475071452428",
    "keyword": "PROMPT",
