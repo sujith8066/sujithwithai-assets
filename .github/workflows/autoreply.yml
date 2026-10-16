@@ -15,10 +15,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Reply to keyword comments
+      - name: Reply to comments (keyword DMs + friendly replies)
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python autoreply/ig_autoreply.py --kits autoreply/kits.json --state autoreply/state.json
       - name: Save handled comment IDs
         run: |
