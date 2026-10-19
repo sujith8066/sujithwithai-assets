@@ -1,6 +1,21 @@
 {
  "reels": [
   {
+   "name": "reel-14-reel-robot",
+   "media_id": "18402007534207456",
+   "keyword": "ROBOT",
+   "topic": "An AI pipeline makes Sujith's Instagram reel every morning: it reads 98 AI news sources, checks every number at the original source, writes the script, voices it in his cloned voice, animates every frame in code, gets reviewed by a second AI, and an AI replies to comments. About 34 minutes per reel; Sujith approves every post. Viewers were asked to comment ROBOT to get how it's built.",
+   "public_replies": [
+    "Sent! Check your DMs 📩",
+    "Just sent it, check your inbox 🚀",
+    "Done ✅ it's in your DMs",
+    "On its way to your DMs 📬",
+    "Sent! Tell me what you'd automate first 🙌",
+    "Check your messages, it's there 👀"
+   ],
+   "dm": "Hey! 👋 Here's how my reel robot works, step by step, with the real numbers:\n\nhttps://sujith8066.github.io/sujithwithai-assets/reel-robot/\n\nTell me what you'd automate first 🤖\n\nFollow @sujithwithai for more AI experiments 🙌"
+  },
+  {
    "name": "reel-11-it-freshers",
    "media_id": "17932884819409476",
    "topic": "If AI does half the work in Indian IT, freshers are hit hardest: 3 AI models say fresher hiring falls 45-65% by 2030. What freshers should do: build with AI instead of competing on routine code, show real projects, aim for new roles in AI engineering, data and AI testing. Viewers were asked: fresher, or hiring them? Comment your plan."
