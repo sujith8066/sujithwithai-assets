@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reel Robot · Sujith With AI</title>
+<meta name="description" content="How an AI pipeline makes a daily Instagram reel: news scan, fact check, script, cloned voice, code animation, AI review and AI comment replies.">
+<style>
+  :root { --bg: #090e21; --card: #121a33; --ink: #f2f6ff; --muted: #a9b6d0; --line: #26304d; --accent: #4de5e8; --yellow: #ffc93c; --green: #3ddc84; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f6f7fb; --card: #ffffff; --ink: #121827; --muted: #4c566a; --line: #dde2ee; --accent: #0b8f93; --yellow: #a36b00; --green: #1a8a4a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 28px 16px 64px; }
+  h1 { font-size: 30px; line-height: 1.15; margin: 10px 0 6px; }
+  h2 { font-size: 20px; margin: 30px 0 8px; }
+  .lead { color: var(--muted); margin: 0 0 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+  table { width: 100%; border-collapse: collapse; font-size: 16px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  ol li, ul li { margin-bottom: 8px; }
+  .small { font-size: 14px; color: var(--muted); }
+  b.n { color: var(--yellow); }
+</style>
+</head>
+<body>
+<main>
+  <h1>How my reel robot works</h1>
+  <p class="lead">Every morning an AI pipeline turns fresh AI news into a finished Instagram reel. I review it and say "go".
+    Nothing is posted without that. Here is the whole setup, with real numbers from my reel of 17 Oct 2026.</p>
+
+  <div class="card">
+    <strong>One real run (17 Oct 2026):</strong> news scan 7:43, topic picked 7:48, voice 7:50, final visuals 8:12,
+    ready to post 8:17. <b class="n">34 minutes</b>, and 9 HeyGen credits (with the avatar; reels without it use about 2).
+  </div>
+
+  <h2>The 6 steps</h2>
+  <ol>
+    <li><strong>Read the news.</strong> A small Python script reads 98 sources (company blogs like OpenAI, Anthropic and Google,
+      Hacker News, GitHub Trending, Techmeme, Indian tech news) and lists everything from the last 48 hours. A simple scoring
+      rule ranks them: big name, usable today, free, money or jobs, India angle.</li>
+    <li><strong>Check the facts.</strong> The AI opens the original page (not a news article about it), saves the text and
+      screenshots the exact sentence. If a number can't be found at the source, it doesn't go in the reel.</li>
+    <li><strong>Write and voice it.</strong> A 25 to 40 second script, with the big number in the first line. HeyGen speaks
+      it in my cloned voice and returns the timing of every word.</li>
+    <li><strong>Animate in code.</strong> Each scene is an HTML page. A headless browser (Playwright) renders it frame by
+      frame, timed to the words, and ffmpeg adds music (ElevenLabs), sound effects and captions.</li>
+    <li><strong>A second AI reviews it.</strong> Gemini watches the finished video with sound and scores 14 things (hook,
+      captions, readability, audio). Fixes get made before I see it.</li>
+    <li><strong>Reply to comments.</strong> A GitHub Actions job runs every hour. Keyword comments get a DM with the link;
+      other comments get a short friendly reply written by Gemini. Spam gets skipped.</li>
+  </ol>
+
+  <h2>The tools</h2>
+  <table>
+    <tr><th>Job</th><th>Tool</th></tr>
+    <tr><td>Runs the whole thing</td><td>Claude Code (an AI coding agent on my PC)</td></tr>
+    <tr><td>Voice and avatar</td><td>HeyGen (cloned voice; avatar only on some reels)</td></tr>
+    <tr><td>Music</td><td>ElevenLabs</td></tr>
+    <tr><td>Animation</td><td>HTML + Playwright + ffmpeg</td></tr>
+    <tr><td>Review and comment replies</td><td>Gemini</td></tr>
+    <tr><td>Posting and comments</td><td>Instagram API (posting only after my "go")</td></tr>
+  </table>
+
+  <h2>What I learned so far</h2>
+  <ul>
+    <li>The first second decides everything: Instagram shows each reel to about 100 strangers first. In my numbers, when
+      more than half of them swiped away, the reel stopped there.</li>
+    <li>Use 5 hashtags at most. With more, Instagram's API published my reels with no caption at all.</li>
+    <li>Real proof beats nice graphics: screenshots of the original source, real numbers, real output.</li>
+    <li>Keep a human in the loop. I still approve every post.</li>
+  </ul>
+
+  <p class="small" style="margin-top:22px">Made by @sujithwithai on Instagram. Share this page with a founder who still edits by hand.</p>
+</main>
+</body>
+</html>
