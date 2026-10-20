@@ -99,6 +99,11 @@
    "name": "reel-01-105k-app",
    "media_id": "18368250694210417",
    "topic": "A founder was quoted $105,000 to build an app and built it with AI for under $400."
+  },
+  {
+   "name": "reel-16-rea-decoded",
+   "media_id": "18394221217163537",
+   "topic": "Decoded episode 1: REA (github.com/morluto/rea), an AI reverse-engineering tool with 338K GitHub stars, more than React. Verdict: overhyped. It only sees what is on your computer; for an app like Gmail it could show how the inbox screen is built, but the spam filter, search and smart replies run on Google's servers. In big software the UI is the small part; the big part is infrastructure and scale, which it cannot copy. It is a real, free, actively maintained tool, useful for security researchers studying software they own. Viewers were asked to comment the name of the next overhyped repo to review; thank them and say it goes on the list. Never promise a date, never call REA a scam or say its stars are fake."
   }
  ]
 }
