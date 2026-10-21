@@ -104,6 +104,21 @@
    "name": "reel-16-rea-decoded",
    "media_id": "18394221217163537",
    "topic": "Decoded episode 1: REA (github.com/morluto/rea), an AI reverse-engineering tool with 338K GitHub stars, more than React. Verdict: overhyped. It only sees what is on your computer; for an app like Gmail it could show how the inbox screen is built, but the spam filter, search and smart replies run on Google's servers. In big software the UI is the small part; the big part is infrastructure and scale, which it cannot copy. It is a real, free, actively maintained tool, useful for security researchers studying software they own. Viewers were asked to comment the name of the next overhyped repo to review; thank them and say it goes on the list. Never promise a date, never call REA a scam or say its stars are fake."
+  },
+  {
+   "name": "reel-17-voice-credits",
+   "media_id": "17975374788136593",
+   "keyword": "VOICE",
+   "topic": "You can build and test an AI voice agent almost for free: LiveKit (real-time audio + hosting, up to $23,000 credits), Deepgram (speech-to-text + end-of-turn detection, starts at $1,000), Google Gemini (the brain, $2,000 Start tier, $200K-$350K with VC funding), ElevenLabs (the voice, 33M characters for a year). Total $31,500 for an early-stage startup; eligibility applies (registered startup + website; LiveKit under 50 staff and under $5M raised; ElevenLabs under 25 staff). No program covers phone minutes; browser test calls are free. Amounts from official pages, Oct 2026. Viewers were asked to comment VOICE to get the stack, links and who qualifies.",
+   "public_replies": [
+    "Sent! Check your DMs 📩",
+    "Just sent it, check your inbox 🚀",
+    "Done ✅ it's in your DMs",
+    "On its way to your DMs 📬",
+    "Sent! What will your agent do? 🎙️",
+    "Check your messages, it's there 👀"
+   ],
+   "dm": "Hey! 👋 Here's the full voice-agent stack from the reel: every credit program, the official links, who qualifies and the order I'd apply in:\n\nhttps://sujith8066.github.io/sujithwithai-assets/voice-stack/\n\nAmounts are from the official pages (Oct 2026) and can change, so check before you apply. What will your agent do? 🎙️\n\nFollow @sujithwithai for more AI builds 🙌"
   }
  ]
 }
