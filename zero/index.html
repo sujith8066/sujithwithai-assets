@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The $0 Startup Stack · Sujith With AI</title>
+<meta name="description" content="Launch a startup for $0: the free plans, their exact limits, the catches, and the official link for each one. Checked 26 Oct 2026.">
+<style>
+  :root { --bg: #090e21; --card: #121a33; --ink: #f2f6ff; --muted: #a9b6d0; --line: #26304d; --accent: #4de5e8; --good: #3ddc84; --warn: #ffc93c; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f6f7fb; --card: #ffffff; --ink: #121827; --muted: #4c566a; --line: #dde2ee; --accent: #066a6e; --good: #12733f; --warn: #7d5200; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 28px 16px 64px; }
+  h1 { font-size: 30px; line-height: 1.3; margin: 10px 0 6px; }
+  h2 { font-size: 21px; line-height: 1.4; margin: 32px 0 10px; }
+  .lead { color: var(--muted); }
+  a { color: var(--accent); }
+  .tbl { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .tbl th, .tbl td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .tbl th { font-size: 14px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  .tbl tr:last-child td { border-bottom: 0; }
+  .price { font-weight: 800; color: var(--good); white-space: nowrap; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 18px; margin-bottom: 12px; }
+  .card b { color: var(--warn); }
+  .small { font-size: 14px; color: var(--muted); }
+  .wrap { overflow-x: auto; }
+  @media (max-width: 600px) {
+    .tbl thead { display: none; }
+    .tbl tr { display: block; border-bottom: 1px solid var(--line); padding: 8px 0; }
+    .tbl td { display: block; border: 0; padding: 4px 14px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>The $0 startup stack</h1>
+  <p class="lead">Everything you need to launch, on free plans. I checked every limit on the official pricing pages on
+    <b>26 Oct 2026</b>. Prices change, so each row links to the page I checked. Not sponsored.</p>
+
+  <h2>The stack</h2>
+  <div class="wrap">
+  <table class="tbl">
+    <thead><tr><th>Job</th><th>Tool and free plan</th><th>What you get free</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>Build</td><td><a href="https://github.com/features/copilot/plans" rel="noopener">GitHub Copilot Free</a></td>
+        <td>2,000 code completions a month, entry-level models, limited chat and agent use. No credit card.</td><td class="price">$0</td></tr>
+      <tr><td>Host</td><td><a href="https://developers.cloudflare.com/pages/platform/limits/" rel="noopener">Cloudflare Pages</a> (Free plan)</td>
+        <td>500 builds a month, up to 100 projects, 100 custom domains per project. <a href="https://www.cloudflare.com/terms/" rel="noopener">Cloudflare's terms</a> have no "personal use only" rule.</td><td class="price">$0</td></tr>
+      <tr><td>Database and logins</td><td><a href="https://supabase.com/pricing" rel="noopener">Supabase Free</a></td>
+        <td>50,000 monthly active users, 500 MB database, 1 GB file storage, 2 active projects.</td><td class="price">$0</td></tr>
+      <tr><td>Payments</td><td><a href="https://stripe.com/pricing" rel="noopener">Stripe</a></td>
+        <td>"No setup fees, monthly fees, or hidden fees." You pay a fee per successful payment, and it varies by country.</td><td class="price">$0 a month</td></tr>
+      <tr><td>Emails</td><td><a href="https://resend.com/pricing" rel="noopener">Resend Free</a></td>
+        <td>3,000 emails a month, 100 a day, 3 domains.</td><td class="price">$0</td></tr>
+      <tr><td>Domain (optional)</td><td>Your own .com</td>
+        <td>About $10.46 a year for a .com at Cloudflare's at-cost registrar (<a href="https://cfdomainpricing.com/" rel="noopener">price tracker</a>, 21 Oct 2026). Or use the free address Cloudflare Pages gives you.</td><td class="price">~$10 a year</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>The catches</h2>
+  <div class="card"><b>Vercel's free plan is personal use only.</b> Its docs say "Hobby teams are restricted to non-commercial
+    personal use only." Taking payments or advertising a product counts as commercial, so you'd need a paid plan.
+    <a href="https://vercel.com/docs/limits/fair-use-guidelines" rel="noopener">Source</a> (updated 14 Sep 2026).</div>
+  <div class="card"><b>Supabase pauses idle free projects.</b> "Free projects are paused after 1 week of inactivity." Fine
+    while you're building; plan for it if your app can go quiet for a week. <a href="https://supabase.com/pricing" rel="noopener">Source</a></div>
+  <div class="card"><b>Free AI coding runs on monthly caps.</b> Copilot Free has 2,000 completions and limited chat a month.
+    Google replaced its free Gemini CLI with Antigravity CLI on 18 June 2026 and doesn't publish the free limits as a number.</div>
+  <div class="card"><b>Payment fees aren't zero.</b> Stripe has no monthly fee, but it takes a cut of each sale. That's the
+    good kind of cost: you only pay it when someone pays you.</div>
+
+  <h2>The real cost</h2>
+  <div class="card" style="border-color:var(--accent)">Money won't stop your launch. Your time is the real cost. Spend it
+    finding your first 10 customers.</div>
+
+  <p class="small" style="margin-top:22px">Made by @sujithwithai. Not affiliated with or sponsored by any company listed.
+    Limits and prices can change; check each official page before you rely on it.</p>
+</main>
+</body>
+</html>
