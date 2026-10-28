@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cost Per User Calculator · Sujith With AI</title>
+<meta name="description" content="Find what one user really costs your AI app each month, and the price that keeps you out of the hole. Free, runs in your browser.">
+<style>
+  :root { --bg: #090e21; --card: #121a33; --ink: #f2f6ff; --muted: #a9b6d0; --line: #26304d; --accent: #4de5e8; --good: #3ddc84; --bad: #ff6b70; --warn: #ffc93c; --field: #0d1430; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f6f7fb; --card: #ffffff; --ink: #121827; --muted: #4c566a; --line: #dde2ee; --accent: #066a6e; --good: #12733f; --bad: #b3261e; --warn: #7d5200; --field: #f3f5fa; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 28px 16px 64px; }
+  h1 { font-size: 30px; line-height: 1.3; margin: 10px 0 6px; }
+  h2 { font-size: 21px; line-height: 1.4; margin: 30px 0 10px; }
+  .lead { color: var(--muted); }
+  a { color: var(--accent); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin-bottom: 12px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+  label { display: block; font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  input { width: 100%; font: inherit; color: var(--ink); background: var(--field); border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; }
+  input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .hint { font-size: 13px; color: var(--muted); margin-top: 3px; }
+  .out { display: grid; grid-template-columns: 1fr auto; gap: 6px 16px; align-items: baseline; }
+  .out b { font-size: 20px; text-align: right; white-space: nowrap; }
+  .big { font-size: 26px; font-weight: 800; }
+  .good { color: var(--good); } .bad { color: var(--bad); } .warn { color: var(--warn); }
+  .verdict { border-color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+  td.n { text-align: right; font-weight: 700; white-space: nowrap; }
+  .small { font-size: 14px; color: var(--muted); }
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cost per user calculator</h1>
+  <p class="lead">What does one user really cost your AI app each month, and what price keeps you out of the hole?
+    Put in your own numbers. Everything runs in your browser; nothing is sent anywhere.</p>
+
+  <h2>1. Your AI cost per request</h2>
+  <div class="card grid">
+    <div><label for="tin">Input tokens per request</label><input id="tin" type="number" min="0" step="100" value="3000"></div>
+    <div><label for="tout">Output tokens per request</label><input id="tout" type="number" min="0" step="100" value="800"></div>
+    <div><label for="pin">Model price per 1M input tokens ($)</label><input id="pin" type="number" min="0" step="0.01" value="3">
+      <div class="hint">Use your model's own pricing page. These are example numbers.</div></div>
+    <div><label for="pout">Model price per 1M output tokens ($)</label><input id="pout" type="number" min="0" step="0.01" value="15"></div>
+  </div>
+
+  <h2>2. Your users and price</h2>
+  <div class="card grid">
+    <div><label for="req">Requests per user per month</label><input id="req" type="number" min="0" step="10" value="300">
+      <div class="hint">An average user. Heavy users are checked below.</div></div>
+    <div><label for="other">Other costs per user per month ($)</label><input id="other" type="number" min="0" step="0.05" value="0.50">
+      <div class="hint">Hosting, database, email, storage, support.</div></div>
+    <div><label for="price">Your price per user per month ($)</label><input id="price" type="number" min="0" step="1" value="10"></div>
+    <div><label for="feep">Payment fee (% of each charge)</label><input id="feep" type="number" min="0" step="0.1" value="3">
+      <div class="hint">Check your payment provider's fee for your country.</div></div>
+    <div><label for="feef">Payment fee (fixed $ per charge)</label><input id="feef" type="number" min="0" step="0.05" value="0.30"></div>
+    <div><label for="heavy">Heavy user uses how many times the average?</label><input id="heavy" type="number" min="1" step="1" value="5"></div>
+  </div>
+
+  <h2>3. What one user makes you</h2>
+  <div class="card out" id="out"></div>
+  <div class="card verdict" id="verdict"></div>
+
+  <h2>4. What growth does to it</h2>
+  <div class="card"><table><thead><tr><th>Paying users</th><th style="text-align:right">Profit or loss per month</th></tr></thead><tbody id="scale"></tbody></table>
+    <p class="small" style="margin:10px 0 0">If one user loses you money, more users lose you more. Growth only fixes that when your costs are
+      mostly fixed, not paid per user.</p></div>
+
+  <h2>Why this matters</h2>
+  <div class="card">Anthropic's IPO filing (Form S-1, filed with the SEC on 26 Oct 2026) says it spent <b>$944 million</b> on computing and
+    infrastructure in January to March 2025, against <b>$376 million</b> of revenue: about <b>$2.51 for every $1</b>. By April to June 2026
+    that was <b>48%</b> of revenue, with a <b>$1.0 billion</b> operating profit. The bill still grew, to $5.6 billion a quarter, but revenue
+    grew faster, to $11.6 billion. It buys computing 12 to 18 months ahead, so that cost is fixed in the near term.
+    <a href="https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm" rel="noopener">The filing</a>
+    (pages 159 and 160).</div>
+  <div class="card">Most AI apps work the other way: you pay for every request, so every new user adds to the bill. That's why the
+    number above matters from your first paying user.</div>
+
+  <p class="small" style="margin-top:22px">Made by @sujithwithai. A planning aid, not financial or investment advice. Not affiliated with
+    or sponsored by Anthropic or any company mentioned.</p>
+</main>
+<script>
+  const $ = id => document.getElementById(id);
+  const num = id => { const v = parseFloat($(id).value); return isFinite(v) && v >= 0 ? v : 0; };
+  const usd = (x, d = 2) => (x < 0 ? "−$" : "$") + Math.abs(x).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  function calc() {
+    const perReq = num("tin") / 1e6 * num("pin") + num("tout") / 1e6 * num("pout");
+    const req = num("req"), price = num("price"), other = num("other");
+    const fee = price > 0 ? price * num("feep") / 100 + num("feef") : 0;
+    const ai = perReq * req, cost = ai + other + fee, profit = price - cost;
+    const heavyProfit = price - (ai * num("heavy") + other + fee);
+    const margin = price > 0 ? profit / price * 100 : 0;
+    const varRate = 1 - num("feep") / 100;
+    const breakEven = varRate > 0 ? (ai + other + num("feef")) / varRate : Infinity;
+    const cls = x => x >= 0 ? "good" : "bad";
+    $("out").innerHTML =
+      `<span>AI cost per request</span><b>${usd(perReq, 4)}</b>` +
+      `<span>AI cost per user per month</span><b>${usd(ai)}</b>` +
+      `<span>Other costs + payment fee</span><b>${usd(other + fee)}</b>` +
+      `<span>Total cost per user per month</span><b>${usd(cost)}</b>` +
+      `<span class="big">Profit per user per month</span><b class="big ${cls(profit)}">${usd(profit)}</b>` +
+      `<span>Margin</span><b class="${cls(profit)}">${price > 0 ? margin.toFixed(0) + "%" : "n/a"}</b>` +
+      `<span>Heavy user (${num("heavy")}x usage)</span><b class="${cls(heavyProfit)}">${usd(heavyProfit)}</b>`;
+    let v;
+    if (profit < 0) v = `<b class="bad">You lose ${usd(-profit)} on every user.</b> Raise the price to at least <b>${usd(breakEven)}</b> just to break even, cut the AI cost per request, or cap usage.`;
+    else if (heavyProfit < 0) v = `<b class="warn">Average users are fine, heavy users lose you ${usd(-heavyProfit)} each.</b> Add a usage limit or a higher plan for heavy use.`;
+    else if (margin < 50) v = `<b class="warn">You make money on each user, but the margin is thin (${margin.toFixed(0)}%).</b> Break-even price: ${usd(breakEven)}. Leave room for support, ads and refunds.`;
+    else v = `<b class="good">Healthy: ${usd(profit)} per user, ${margin.toFixed(0)}% margin.</b> Break-even price: ${usd(breakEven)}. Keep checking as usage grows.`;
+    $("verdict").innerHTML = v;
+    $("scale").innerHTML = [10, 100, 1000, 10000].map(n =>
+      `<tr><td>${n.toLocaleString("en-US")}</td><td class="n ${cls(profit)}">${usd(profit * n, 0)}</td></tr>`).join("");
+  }
+  document.querySelectorAll("input").forEach(i => i.addEventListener("input", calc));
+  calc();
+</script>
+</body>
+</html>
