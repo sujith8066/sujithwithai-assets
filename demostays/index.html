@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DemoStays · AI-built demo</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="An AI-built demo of a vacation-rental app. Fictional listings. No real bookings or payments.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#/"><span class="mark">◆</span> DemoStays</a>
+  <button class="search-pill" id="openSearch">
+    <b id="pillWhere">Anywhere</b><span>·</span><span id="pillDates">Any week</span><span>·</span><span id="pillGuests">Add guests</span>
+    <i class="go">⌕</i>
+  </button>
+</header>
+<div class="demo-banner">AI-built demo · not a real booking site</div>
+<main id="app"></main>
+
+<div class="sheet" id="searchSheet" hidden>
+  <div class="sheet-card">
+    <h3>Where to?</h3>
+    <input id="qWhere" placeholder="Search destinations" autocomplete="off">
+    <div class="row2">
+      <label>Check-in<input type="date" id="qIn"></label>
+      <label>Check-out<input type="date" id="qOut"></label>
+    </div>
+    <label>Guests<select id="qGuests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="4">4 guests</option><option value="6">6 guests</option></select></label>
+    <div class="sheet-actions"><button class="ghost" id="closeSearch">Clear</button><button class="primary" id="doSearch">Search</button></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
