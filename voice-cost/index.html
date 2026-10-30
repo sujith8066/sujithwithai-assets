@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice Agent Cost Sheet · Sujith With AI</title>
+<meta name="description" content="What an AI voice agent really costs per minute, part by part, and what platforms charge. Official prices, Oct 2026.">
+<style>
+  :root { --bg: #090e21; --card: #121a33; --ink: #f2f6ff; --muted: #a9b6d0; --line: #26304d; --accent: #4de5e8; --yellow: #ffc93c; --green: #3ddc84; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f6f7fb; --card: #ffffff; --ink: #121827; --muted: #4c566a; --line: #dde2ee; --accent: #066a6e; --yellow: #7d5200; --green: #146c3a; } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 28px 16px 64px; }
+  h1 { font-size: 30px; line-height: 1.3; margin: 10px 0 6px; }
+  h2 { font-size: 21px; line-height: 1.4; margin: 32px 0 10px; }
+  .lead { color: var(--muted); margin: 0 0 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; margin-bottom: 14px; }
+  .scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 600px; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr.tot td { font-weight: 800; color: var(--yellow); }
+  .num { white-space: nowrap; }
+  a { color: var(--accent); }
+  .small { font-size: 14px; color: var(--muted); }
+  ul li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>What an AI voice agent really costs per minute</h1>
+  <p class="lead">Every part priced from its official page on 20 Oct 2026. Totals are my own arithmetic for one minute of a typical
+    inbound US call (3-minute call, the agent speaking about 45% of the time). Prices change; check the links.</p>
+
+  <h2>1. The cheapest sensible stack: about 2.7¢ a minute</h2>
+  <div class="card scroll"><table>
+    <tr><th>Part</th><th>Choice</th><th class="num">Per minute</th><th>Source</th></tr>
+    <tr><td>Hosting the agent</td><td>LiveKit agent session</td><td class="num">1.00¢</td><td><a href="https://livekit.com/pricing" rel="noopener">livekit.com/pricing</a></td></tr>
+    <tr><td>Call into LiveKit</td><td>LiveKit SIP</td><td class="num">0.40¢</td><td><a href="https://livekit.com/pricing" rel="noopener">livekit.com/pricing</a></td></tr>
+    <tr><td>Voice (text-to-speech)</td><td>Inworld TTS-2 Flash</td><td class="num">0.61¢</td><td><a href="https://inworld.ai/pricing" rel="noopener">inworld.ai/pricing</a></td></tr>
+    <tr><td>Phone line</td><td>Telnyx SIP, inbound local</td><td class="num">0.32¢</td><td><a href="https://telnyx.com/pricing/elastic-sip" rel="noopener">telnyx.com/pricing</a></td></tr>
+    <tr><td>Hearing (speech-to-text)</td><td>AssemblyAI Universal-Streaming</td><td class="num">0.25¢</td><td><a href="https://www.assemblyai.com/pricing" rel="noopener">assemblyai.com/pricing</a></td></tr>
+    <tr><td>AI brain (language model)</td><td>a small model (Claude Haiku-class or GPT mini-class)</td><td class="num">0.08¢</td><td><a href="https://platform.claude.com/docs/en/about-claude/pricing" rel="noopener">model pricing</a></td></tr>
+    <tr class="tot"><td>Total</td><td></td><td class="num">≈ 2.7¢</td><td></td></tr>
+  </table></div>
+
+  <h2>2. A premium, natural-sounding stack: about 5.8¢ a minute</h2>
+  <div class="card scroll"><table>
+    <tr><th>Part</th><th>Choice</th><th class="num">Per minute</th></tr>
+    <tr><td>Hosting + call in</td><td>LiveKit agent session + SIP</td><td class="num">1.40¢</td></tr>
+    <tr><td>Call recording + noise removal</td><td>LiveKit</td><td class="num">0.62¢</td></tr>
+    <tr><td>Voice</td><td>ElevenLabs v4 Turbo</td><td class="num">1.62¢</td></tr>
+    <tr><td>AI brain</td><td>Gemini Flash-class (at its 2027 price)</td><td class="num">1.13¢</td></tr>
+    <tr><td>Hearing</td><td>Deepgram Flux (current promo price)</td><td class="num">0.65¢</td></tr>
+    <tr><td>Phone line</td><td>Twilio SIP, inbound local</td><td class="num">0.34¢</td></tr>
+    <tr class="tot"><td>Total</td><td></td><td class="num">≈ 5.8¢</td></tr>
+  </table>
+  <p class="small">With ElevenLabs' top v4 voice instead of v4 Turbo: about 7.4¢.</p></div>
+
+  <h2>3. What platforms charge (their pricing pages)</h2>
+  <div class="card scroll"><table>
+    <tr><th>Platform</th><th>Published price</th><th>What's extra</th></tr>
+    <tr><td>Retell AI</td><td class="num">$0.07–$0.31 / min</td><td>Depends on the voice, model and phone line you pick</td></tr>
+    <tr><td>Bland AI</td><td class="num">$0.12–$0.14 / min</td><td>Phone line billed separately</td></tr>
+    <tr><td>Vapi</td><td class="num">$0.05 / min hosting</td><td>Plus models and phone; their own calculator gives about $0.08–$0.13 all-in</td></tr>
+    <tr><td>ElevenLabs Agents</td><td class="num">$0.08 / min</td><td>Plus the language model and your phone carrier</td></tr>
+    <tr><td>Deepgram / AssemblyAI voice-agent APIs</td><td class="num">$0.075 / min</td><td>Plus phone carrier</td></tr>
+    <tr><td>Cartesia Managed Agents</td><td class="num">$0.06 / min</td><td>Plus $0.014 / min on a Cartesia number</td></tr>
+  </table></div>
+
+  <h2>4. What you'd keep (gross margin, my arithmetic)</h2>
+  <div class="card scroll"><table>
+    <tr><th>You charge per minute</th><th>Cheapest stack (2.7¢)</th><th>Premium stack (5.8¢)</th></tr>
+    <tr><td>6¢</td><td>56%</td><td>4%</td></tr>
+    <tr><td>10¢</td><td>73%</td><td>42%</td></tr>
+    <tr><td>15¢</td><td>82%</td><td>62%</td></tr>
+  </table>
+  <p class="small">Before engineering time, support, phone-number rental (about $1 a month each), recording storage, taxes and card fees.</p></div>
+
+  <h2>What I'd take from this</h2>
+  <ul>
+    <li>Don't optimise the AI brain first: it's the smallest line. Hosting and the voice are where the money goes.</li>
+    <li>Platforms are worth it while you test an idea. Build your own stack once calls are steady.</li>
+    <li>Per-minute prices keep falling, so don't compete on minutes. Charge for the outcome: a booked appointment, a qualified lead.</li>
+    <li>Several prices are promotions: Gemini and Deepgram list rises or promo prices that end, so recheck before you set your price.</li>
+  </ul>
+
+  <p class="small" style="margin-top:22px">Made by @sujithwithai. Not sponsored. Want to start for free? Comment VOICE on my previous reel for the startup credits that cover most of these costs.</p>
+</main>
+</body>
+</html>
