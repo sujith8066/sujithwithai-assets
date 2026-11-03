@@ -164,6 +164,21 @@
     "Check your messages, it's there 👀"
    ],
    "dm": "Hey! 👋 Here's the cost-per-user calculator: put in your AI cost per request, how much a user uses it, and your price, and it shows what each user really makes you (or costs you):\n\nhttps://sujith8066.github.io/sujithwithai-assets/price/\n\nWhat are you charging right now? 🛠️\n\nFollow @sujithwithai for more 🙌"
+  },
+  {
+   "name": "reel-20-ai-airbnb",
+   "media_id": "18385920208224924",
+   "keyword": "CLONE",
+   "topic": "I asked AI (Claude Code) to build an Airbnb-style app; it was working in about 4 minutes (build log 17:40:38 to 17:44:13 UTC, 25 Oct 2026): search, photos, map with prices, listing pages, booking, demo checkout. It's a front-end demo with made-up listings and a locked demo payment form; nothing is charged; not affiliated with Airbnb. What AI couldn't build: trust (real reviews, ID checks, support), supply (Airbnb says 5.5M+ hosts; a new app has zero), money (real payments, payouts in 200+ countries, local rules). Verdict: the app is the easy part, the business is the hard part. Viewers were asked to comment CLONE for the live demo and the code, and to suggest which app to clone next.",
+   "public_replies": [
+    "Sent! Check your DMs 📩",
+    "Just sent it, check your inbox 🚀",
+    "Done ✅ it's in your DMs",
+    "On its way to your DMs 📬",
+    "Sent! Which app should I clone next? 🛠️",
+    "Check your messages, it's there 👀"
+   ],
+   "dm": "Hey! 👋 Here's the Airbnb-style app AI built in 4 minutes. Try the live demo, read the code and the build log, and see the list of what it couldn't build:\n\nhttps://sujith8066.github.io/sujithwithai-assets/clone/\n\nThe listings are made up and the payment form is locked, so nothing is charged. Which app should I clone next? 🛠️\n\nFollow @sujithwithai for more 🙌"
   }
  ]
 }
